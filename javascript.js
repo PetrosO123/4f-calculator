@@ -1,10 +1,34 @@
+//list of matching selectors
+const numbers = document.querySelectorAll('#num');
+const currScreen = document.querySelector('.currentScreen');
+const clear = document.querySelector('#clear');
+
+numbers.forEach((button)=>button.addEventListener('click', () =>addNumber(button.textContent)));
+clear.addEventListener('click', clearNumbers);
+
+console.log(numbers);
+
+//-------------------display-update methods:-------------------
+
+function addNumber(number){
+    currScreen.textContent += number;
+}
+
+function clearNumbers(){
+    currScreen.textContent = null;
+}
+//-------------------calculator operations:-------------------
 const add = (a,b)=> a + b;
-
 const subtract = (a,b) => a-b;
-
 const divide = (a,b)=>a/b;
-
 const multiply = (a,b)=>a*b;
+const operate = function(operator, b, c){
+    console.log(operator(b,c));
+    return operator(b,c);
+}
+
+
+
 
 const sum = function(a){
   let total = 0;
@@ -13,7 +37,6 @@ const sum = function(a){
   }
   return total;
 };
-
 const multiplyTotal = function(b){
   if (b.length !== 0){
     total = b[0];
@@ -23,9 +46,7 @@ const multiplyTotal = function(b){
   }
   return total;
 };
-
 const power = (a,b) => a**b;
-
 const factorial = function(a) {
   let total = 1;
   for (let i = a; i>0; i--){
@@ -35,9 +56,3 @@ const factorial = function(a) {
   return total;
   
 };
-
-const operate = function(operator, b, c){
-    console.log(operator(b,c));
-    return operator(b,c);
-}
-operate(factorial, 3);
