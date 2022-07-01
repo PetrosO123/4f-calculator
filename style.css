@@ -1,0 +1,54 @@
+.main{
+    height: 75vh;
+    width: 80%;
+}
+.container{
+    background: lightgrey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* padding: 10px; */
+    width: max-content;
+    margin: 15% auto;
+}
+.display{
+    width: 370px;
+    background-color: darkGrey;
+    height: 50px;
+    font-size: 48px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.buttons-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    margin: 10px 0;
+}
+
+.button{
+    padding: 20px;
+    border: 2px solid;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+
+#num {
+    background-color:white;
+}
+  
+#operator {
+    background-color:orange;
+}
+  
+#equals {
+    background-color:green;
+}
+  
+#clear {
+    background-color:crimson;
+}
