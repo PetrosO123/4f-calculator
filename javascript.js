@@ -18,7 +18,10 @@ decimal.addEventListener('click', addDecimal);
 //-------------------display-update methods:-------------------
 
 function addDecimal(){
-  currScreen.textContent += '.';
+  if (currScreen.textContent.slice(-1)!='.'){
+    currScreen.textContent += '.';
+  }
+  
 }
 function addNumber(number){
   currScreen.textContent += number;
