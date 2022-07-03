@@ -5,26 +5,23 @@ const currScreen = document.querySelector('.currentScreen');
 const lastScreen = document.querySelector('.lastScreen');
 const clear = document.querySelector('#clear');
 const equals = document.querySelector('#equals');
+const decimal = document.querySelector('#decimal');
 
 //adding event listeners for number/operator/clear buttons
 numbers.forEach((button)=>button.addEventListener('click', () =>addNumber(button.textContent)));
 operators.forEach((button)=>button.addEventListener('click', () =>addOperator(button.textContent)));
 clear.addEventListener('click', clearNumbers);
 equals.addEventListener('click', () =>operate(lastScreen.textContent.slice(-1), lastScreen.textContent.slice(0, -1), currScreen.textContent));
-
+decimal.addEventListener('click', addDecimal);
 // console.log(numbers);
 
 //-------------------display-update methods:-------------------
 
+function addDecimal(){
+  currScreen.textContent += '.';
+}
 function addNumber(number){
-  // let a = lastScreen.textContent.slice(-1);
-  // if (isNaN(a)){
-  //   console.log('yes');
-  //   currScreen.textContent = null;
-  // }
   currScreen.textContent += number;
-  // console.log("This is the value: " + lastScreen.textContent)
-  // console.log(`this is a: ${a}`);
 }
 
 function addOperator(operator){
@@ -44,7 +41,7 @@ function clearNumbers(){
   lastScreen.textContent = null;
 }
 //-------------------calculator operations:-------------------
-const add = (a,b)=> parseInt(a.slice(0,-1)) + parseInt(b);
+const add = (a,b)=> parseFloat(a) + parseFloat(b);
 const subtract = (a,b) => a-b;
 const divide = (a,b)=>a/b;
 const multiply = (a,b)=>a*b;
