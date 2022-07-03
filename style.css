@@ -12,11 +12,20 @@
     width: max-content;
     margin: 15% auto;
 }
-.display{
+.display1{
+    width: 370px;
+    background-color: darkGrey;
+    height: 30px;
+    font-size: 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.display2{
     width: 370px;
     background-color: darkGrey;
     height: 50px;
-    font-size: 48px;
+    font-size: 50px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
